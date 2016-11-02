@@ -359,12 +359,12 @@ public class TypeConverter
      */
     private final Collection<?> createCollection(Object value)
     {
-        Collection<?> coll;
+        Collection<?> coll = null;
         if (isMultiValued(value))
         {
             coll = (Collection<?>) value;
         }
-        else
+        else if (coll != null)
         {
             ArrayList<Object> list = new ArrayList<Object>(1);
             list.add(value);
